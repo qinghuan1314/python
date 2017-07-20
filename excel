@@ -1,0 +1,15 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+__author__ = 'littley'
+import xlrd
+data = xlrd.open_workbook('test.xlsx')
+# table = data.sheets()[0] #通过引索顺序获取
+# table = data.sheet_by_index(0) #通过引索顺序获取
+table = data.sheet_by_name(u'Sheet1') #通过名称获取
+nrows = table.nrows #获取总行数
+ncols = table.ncols #获取总列数
+print nrows,ncols
+#获取第一行
+print table.row_values(0)
+#获取第一列
+print table.col_values(1)
